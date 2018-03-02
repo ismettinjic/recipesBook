@@ -20,6 +20,7 @@ import { routing } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { RecipeStartComponent } from './recipes/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,8 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     RecipeListComponent,
     RecipeItemComponent,
     RecipeDetailComponent,
-    ShoppingListComponent,
-    ShoppingListAddComponent,
+ //   ShoppingListComponent,  --> Dodali u shopping list module
+ //   ShoppingListAddComponent, --> Dodali u shopping list module
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
@@ -39,11 +40,12 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+//    FormsModule, --> Dodali u shopping list module
     HttpModule,
     routing,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ShoppingListModule
   ],
   providers: [RecipeService,ShoppingListService],
   bootstrap: [AppComponent]
