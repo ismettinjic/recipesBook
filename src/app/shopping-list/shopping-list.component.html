@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-10" style="width: 100%">
+    <!-- Koristimo property biding da bi povezali item unutar shoping list add component i
+    selectedItem koji se nalazi unutar metode u shoping list componentes 
+  na ovaj nacin prosljedjujemo unutar item-a koji je input selected item 
+,a selected item je metoda u koju se poziva tj prosljedjuje item  -->
+    <rb-shopping-list-add [item]="selectedItem" (cleared)="onCleared()"></rb-shopping-list-add>
+    <hr>
+    <ul class="list-group">
+
+      <!-- sa (clickom) prosljedjujemo item u metodu onSelectedItem-->
+      <a class="list-group-item" style="" *ngFor="let item of items" (click)="onSelectItem(item)">{{item.name}} ({{item.amount}})</a>
+    </ul>
+  </div>
+</div>
+
+
+
+

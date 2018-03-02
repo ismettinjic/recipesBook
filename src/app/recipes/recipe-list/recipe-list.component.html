@@ -1,0 +1,26 @@
+
+<div class="row">
+  <div class="col-xs-12">
+      <a class="btn btn-success" [routerLink]="['new']">New Recipe</a>
+  </div>
+</div>
+<div class="row">
+  
+
+  <div class="col-xs-12" style="width: 100%"> 
+    <ul class="list-group">
+
+    <!-- Uzima jedan recipe2 od recipe i salje ga u petlju dok se svi ne izredaju , svaki se kasnije slusa da li je selektovan, ako jeste salje se na onSelected kao recipe 2 tj kao pojedinacni i salje se na [recipe] kao pojedinacni koji je povezan sa recipe item  komponentom -->
+  
+    <!--  Let i=index prosljedjuje vrijednost indexne komponente u i koji se kasnije prosljedjuje u recipeId , koji se Imputuje tj prima u recipe time components i na osnovu kliknute komponente se odredjuje tj prosljedjuje id unutar recipe teail routinga -->
+   
+    <rb-recipe-item *ngFor="let recipe2 of recipes; let i=index" [recipe]="recipe2" [recipeId]="i"></rb-recipe-item>
+
+
+    <!-- Stari kod prije routinga 
+<rb-recipe-item *ngFor="let recipe2 of recipes" [recipe]="recipe2" (click)="onSelected(recipe2)"></rb-recipe-item>
+-->
+
+    </ul>
+</div>
+</div>
